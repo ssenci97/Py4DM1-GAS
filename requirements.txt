@@ -1,0 +1,11 @@
+# Python dependencies for the semmeta exercise
+# Install with:  pip install -r requirements.txt
+
+# Reading SEM TIFF images and their metadata tags
+pillow>=9.0
+
+# Visualizing SEM images with the metadata table
+matplotlib>=3.5
+
+# Running the unit tests
+pytest>=7.0
