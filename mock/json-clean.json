@@ -1,0 +1,14 @@
+{
+  "AP_WD": "5.21 mm",
+  "AP_BEAM_CURRENT": "10.0 pA",
+  "AP_ACCELERATION_VOLTAGE": "15.0 kV",
+  "AP_MAGNIFICATION": "50000 x",
+  "AP_TILT_ANGLE": "0.0 deg",
+  "DP_DETECTOR_TYPE": "SE",
+  "DP_DETECTOR_CHANNEL": "Everhart-Thornley",
+  "DP_WORKING_PRESSURE": "2.4e-4 Pa",
+  "DP_IMAGE_WIDTH": "1024 px",
+  "DP_IMAGE_HEIGHT": "768 px",
+  "DP_STIF_VERSION": "2.5"
+}
+
