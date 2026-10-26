@@ -43,6 +43,8 @@ class JsonCleaner:
             "<number> <unit>" (one space) if a number followed by a unit
             is found, otherwise value unchanged.
         """
+        if not isinstance(value, str):
+            return value
 
         # Keep only the part after the first '=' (the parameter name is ignored)
         if "=" in value:
