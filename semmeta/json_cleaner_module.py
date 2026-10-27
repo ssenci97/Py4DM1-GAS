@@ -21,7 +21,8 @@ class JsonCleaner:
         """
 
         # TODO (Task 2): implement this method
-        raise NotImplementedError("load_json is not implemented yet")
+        with open(jsfile) as f:
+            return json.load(f)
 
 
     def clean_value(self, value):
@@ -42,6 +43,8 @@ class JsonCleaner:
             "<number> <unit>" (one space) if a number followed by a unit
             is found, otherwise value unchanged.
         """
+        if not isinstance(value, str):
+            return value
 
         # Keep only the part after the first '=' (the parameter name is ignored)
         if "=" in value:
@@ -76,11 +79,9 @@ class JsonCleaner:
         Returns:
             a new dictionary with the cleaned entries
         """
-        
-        # TODO (Task 2): implement this method
-        raise NotImplementedError("clean_dict is not implemented yet")
 
-
+        return {key: self.clean_value(val) 
+                for key, val in data.items() if val is not None}
 
     def process(self, jsfile):
         """
@@ -96,9 +97,8 @@ class JsonCleaner:
         Returns:
             the cleaned metadata dictionary
         """    
-        # TODO (Task 2): implement this method
-        raise NotImplementedError("process is not implemented yet")
-
+        self.cleaned_data = self.clean_dict(self.load_json(jsfile))
+        return self.cleaned_data
 
     def save_cleaned(self, output_path):
         """
@@ -116,5 +116,5 @@ class JsonCleaner:
             None
         """    
     
-        # TODO (Task 2): implement this method
-        raise NotImplementedError("save_cleaned is not implemented yet")
+        with open(output_path, "rw") as f:
+            json.dump(self.cleaned_data, f)
