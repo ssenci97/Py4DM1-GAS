@@ -116,5 +116,5 @@ class JsonCleaner:
             None
         """    
     
-        with open(output_path, "rw") as f:
-            json.dump(self.cleaned_data, f)
+        with open(output_path, "w") as f:
+            json.dump(self.cleaned_data, f, indent = 2)
